@@ -2,14 +2,16 @@
     // $name="Alberto";
     //$name = $_GET['name'];
 
-    $paragrafh = 
-        "
+    $badParagrafh = 
+    "
         Il sesso è una cosa interessante ma non ha un'importanza decisiva.
         Cioè è meno importante, dal punto di vista fisiologico, della cacata.
         Un'uomo può tirare avanti per 70 anni senza una donna ma può morire
         in una settimana se le budella non si muovono.
         Charles Bukowski.
-        "
+    ";
+
+    $goodParagrafh = str_replace("sesso", "***", $badParagrafh);
 ?>
 
 <!DOCTYPE html>
@@ -21,8 +23,10 @@
     <title>BadWords</title>
 </head>
 <body>
-    <h1><?php echo $paragrafh?></h1>
-    <h4>Questo paragrafo ha: <?php echo strlen($paragrafh)?> caratteri.</h4>
+    <h1><?php echo $badParagrafh?></h1>
+    <h4>Questo paragrafo ha: <?php echo strlen($badParagrafh)?> caratteri.</h4>
+
+    <h1><?php echo $goodParagrafh?></h1>
 </body>
 </html>
 
