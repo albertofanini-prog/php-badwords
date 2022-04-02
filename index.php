@@ -2,7 +2,7 @@
     // $name="Alberto";
     //$name = $_GET['name'];
 
-    $badParagrafh = 
+    $bad_paragrafh = 
     "
         Il sesso è una cosa interessante ma non ha un'importanza decisiva.
         Cioè è meno importante, dal punto di vista fisiologico, della cacata.
@@ -11,7 +11,24 @@
         Charles Bukowski.
     ";
 
-    $goodParagrafh = str_replace("sesso", "***", $badParagrafh);
+    $lower_bad_paragrafh = strtolower($bad_paragrafh);
+
+    // // $goodParagrafh = str_replace("sesso", "***", $badParagrafh);
+
+    // $hide_it= "***";
+
+    // $bad_word= $_GET['$bad_word'];
+
+    // $hide_bad_word = str_replace($bad_word, $hide_it, $bad_paragrafh);
+
+    $hide = $_GET["hide"];
+
+    $lower_hide = strtolower($hide);
+
+    $change_to = "***";
+    $replace = str_replace($hide, $change_to, $bad_paragrafh);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -23,10 +40,20 @@
     <title>BadWords</title>
 </head>
 <body>
-    <h1><?php echo $badParagrafh?></h1>
-    <h4>Questo paragrafo ha: <?php echo strlen($badParagrafh)?> caratteri.</h4>
-
-    <h1><?php echo $goodParagrafh?></h1>
+    <h2>
+        Testo originale:
+    </h2>
+    <p>
+        <?php
+            echo $bad_paragrafh;
+        ?>
+    </p>
+    <h2>Testo censruato:</h2>
+    <p>
+        <?php
+            echo $replace;
+        ?>
+    </p>
 </body>
 </html>
 
