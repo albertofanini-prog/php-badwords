@@ -10,23 +10,20 @@
         in una settimana se le budella non si muovono.
         Charles Bukowski.
     ";
-
     $lower_bad_paragrafh = strtolower($bad_paragrafh);
+    $length_bad_paragrafh = strlen($bad_paragrafh);
 
     // // $goodParagrafh = str_replace("sesso", "***", $badParagrafh);
-
     // $hide_it= "***";
-
     // $bad_word= $_GET['$bad_word'];
-
     // $hide_bad_word = str_replace($bad_word, $hide_it, $bad_paragrafh);
 
     $hide = $_GET["hide"];
-
     $lower_hide = strtolower($hide);
-
     $change_to = "***";
+
     $replace = str_replace($hide, $change_to, $bad_paragrafh);
+    $length_replace = strlen($replace);
 
 
 ?>
@@ -48,11 +45,17 @@
             echo $bad_paragrafh;
         ?>
     </p>
+    <p>
+        La lunghezza del paragrafo è: <?php echo $length_bad_paragrafh?> caratteri.
+    </p>
     <h2>Testo censruato:</h2>
     <p>
         <?php
             echo $replace;
         ?>
+    </p>
+    <p>
+        La lunghezza del paragrafo è: <?php echo $length_replace?> caratteri.
     </p>
 </body>
 </html>
